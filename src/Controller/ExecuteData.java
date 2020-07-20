@@ -124,6 +124,7 @@ public class ExecuteData {
         return arlistrng;
     }
     
+    //Update
     public String apdetPasien(Pasien psn,Dokter dkt,Ruang rng){
         String hasil="";
         String query ="UPDATE pasien " + "SET Nama= ?, Gender= ?, Umur= ?, Alamat= ?, Wali= ?, Keterangan= ?, Tanggal_masuk= ?, Triage= ?, ID_Dokter= ?, ID_Ruang= ?, Status= ? " + "WHERE ID_Pasien= ?";
@@ -152,4 +153,23 @@ public class ExecuteData {
         }
         conMan.Logoff();
         return hasil; }
+    
+    //Delete
+    public String deletedata(String psn){
+        String hasil ="";
+        String query="delete from pasien where ID_Pasien='"+psn+"'";
+        ConnectionManager conMan = new ConnectionManager();
+        Connection conn = conMan.Logon();
+        try {
+            Statement stm = conn.createStatement();
+            stm.executeUpdate(query);
+            hasil="Berhasil";
+        } catch (SQLException ex) {
+            hasil="Gagal";
+
+        Logger.getLogger(ExecuteData.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        conMan.Logoff();
+        return hasil;
+        }
 }

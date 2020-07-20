@@ -91,6 +91,7 @@ public class mainView extends javax.swing.JFrame {
         jScrollPane4.setViewportView(tblDokter);
     }
 
+    //Menampilan Ruangan
     private void displayRng(){
         Adapter ap = new Adapter();
         Object[][] myrng = ap.getAllGuru2();
@@ -159,6 +160,7 @@ public class mainView extends javax.swing.JFrame {
         btnEdit = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
+        btnEdit1 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblPasien = new javax.swing.JTable();
@@ -276,27 +278,37 @@ public class mainView extends javax.swing.JFrame {
             }
         });
 
+        btnEdit1.setText("Delete Data");
+        btnEdit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEdit1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelInputLayout = new javax.swing.GroupLayout(PanelInput);
         PanelInput.setLayout(PanelInputLayout);
         PanelInputLayout.setHorizontalGroup(
             PanelInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelInputLayout.createSequentialGroup()
+            .addGroup(PanelInputLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(PanelInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtKeterangan, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(btnSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelInputLayout.createSequentialGroup()
+                        .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnEdit1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(21, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelInputLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel19)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PanelInputLayout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtKeterangan, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(76, 76, 76)
-                        .addComponent(btnSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                        .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(30, 30, 30))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(159, 159, 159))))
             .addGroup(PanelInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelInputLayout.createSequentialGroup()
                     .addGap(31, 31, 31)
@@ -333,22 +345,23 @@ public class mainView extends javax.swing.JFrame {
         PanelInputLayout.setVerticalGroup(
             PanelInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelInputLayout.createSequentialGroup()
-                .addContainerGap(188, Short.MAX_VALUE)
+                .addContainerGap(208, Short.MAX_VALUE)
                 .addGroup(PanelInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelInputLayout.createSequentialGroup()
                         .addGroup(PanelInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtKeterangan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))
-                        .addGap(29, 29, 29))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelInputLayout.createSequentialGroup()
+                        .addGap(21, 21, 21))
+                    .addGroup(PanelInputLayout.createSequentialGroup()
                         .addGroup(PanelInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27))))
+                            .addComponent(btnSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEdit1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18))))
             .addGroup(PanelInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelInputLayout.createSequentialGroup()
                     .addContainerGap()
@@ -703,6 +716,49 @@ public class mainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIDKeyTyped
 
+    private void btnEdit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdit1ActionPerformed
+        int column= tblPasien.getSelectedColumn();
+        int row = tblPasien.getSelectedRow();
+        if(column>=0){
+            int confirm = JOptionPane.showConfirmDialog(rootPane, "Apakah anda yakin?");
+        if (confirm==0){
+            System.out.println("Konfirmasi: "+confirm);
+            Object ID_Pasien = tblPasien.getModel().getValueAt(row, 0);
+            ExecuteData em = new ExecuteData();
+            em.deletedata((String)ID_Pasien);
+            JOptionPane.showMessageDialog(rootPane, "Deleted");
+            txtNama.setText("");
+            cmbGender.setSelectedIndex(0);
+            txtUmur.setText("");
+            txtAlamat.setText("");
+            txtWali.setText("");
+            txtKeterangan.setText("");
+            txtTanggal.setText("");
+            cmbTriage.setSelectedIndex(0);
+            txtStatus.setText("");
+            cmbDokter.setSelectedIndex(0);
+            cmbRuang.setSelectedIndex(0);
+            displayall();
+        } else if (confirm==1){
+            txtNama.setText("");
+            cmbGender.setSelectedIndex(0);
+            txtUmur.setText("");
+            txtAlamat.setText("");
+            txtWali.setText("");
+            txtKeterangan.setText("");
+            txtTanggal.setText("");
+            cmbTriage.setSelectedIndex(0);
+            txtStatus.setText("");
+            cmbDokter.setSelectedIndex(0);
+            cmbRuang.setSelectedIndex(0);
+            displayall();
+        }
+            displayall();
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Silahkan Pilih Data");
+        }
+    }//GEN-LAST:event_btnEdit1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -745,6 +801,7 @@ public class mainView extends javax.swing.JFrame {
     private javax.swing.JPanel PanelTabel;
     private javax.swing.JPanel bodyPanel;
     private javax.swing.JButton btnEdit;
+    private javax.swing.JButton btnEdit1;
     private javax.swing.JButton btnSimpan;
     private javax.swing.JComboBox<String> cmbDokter;
     private javax.swing.JComboBox<String> cmbGender;
